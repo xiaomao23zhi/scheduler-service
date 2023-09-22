@@ -1,3 +1,4 @@
+# syntax=docker/dockerfile:experimental
 FROM openjdk:11.0-jdk as build
 
 WORKDIR /workspace/app
@@ -7,7 +8,7 @@ COPY .mvn .mvn
 COPY pom.xml pom.xml
 COPY src src
 
-RUN ./mvnw package -DskipTests
+RUN --mount=type=cache,target=/root/.m2 ./mvnw package -DskipTests
 RUN java -Djarmode=layertools -jar target/scheduler-service-0.0.1-SNAPSHOT.jar extract --destination target/extracted
 
 FROM openjdk:11.0-jre

@@ -1,7 +1,7 @@
 server:
   port: 8080
-  servlet:
-    context-path: /scheduler
+  compression:
+    enabled: true
 
 spring:
   application:
@@ -21,10 +21,24 @@ spring:
       database: ${MONGO_DATABASE:core}
       authentication-database: ${MONGO_AUTH_DATABASE:admin}
 
-  cloud:
-    kubernetes:
-      discovery:
-        all-namespaces: true
-      config:
-        name: scheduler-service
-        fail-fast: true
+logging:
+  level:
+    root: INFO
+  file:
+    name: logs/${spring.application.name}.log
+  logback:
+    rollingpolicy:
+      clean-history-on-start: false
+
+management:
+  server:
+    port: 8081
+  endpoint:
+    health:
+      enabled: true
+    startup:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: health,startup,refresh

@@ -13,7 +13,7 @@ public class SchedulerController {
         this.applicationConfig = applicationConfig;
     }
 
-    @GetMapping
+    @GetMapping("/message")
     public String message() {
 
         return String.format(applicationConfig.getMessage(), "1", "2");

@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: scheduler-service
+  cloud:
+    kubernetes:
+      discovery:
+        enabled: true
+      config:
+        name: ${spring.application.name}
