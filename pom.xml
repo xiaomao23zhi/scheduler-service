@@ -6,7 +6,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.7.18</version>
+        <version>3.3.11</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
@@ -17,10 +17,9 @@
     <description>scheduler-service</description>
 
     <properties>
-        <java.version>11</java.version>
-        <spring-cloud-dependencies.version>2021.0.9</spring-cloud-dependencies.version>
-        <springdoc.version>1.8.0</springdoc.version>
-        <modelmapper.version>3.1.1</modelmapper.version>
+        <java.version>17</java.version>
+        <spring-cloud-dependencies.version>2023.0.5</spring-cloud-dependencies.version>
+        <springdoc.version>2.6.0</springdoc.version>
     </properties>
 
     <dependencies>
@@ -82,7 +81,7 @@
         </dependency>
         <dependency>
             <groupId>org.springdoc</groupId>
-            <artifactId>springdoc-openapi-ui</artifactId>
+            <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
             <version>${springdoc.version}</version>
         </dependency>
     </dependencies>

@@ -15,11 +15,11 @@ spring:
     time-zone: Asia/Shanghai
     deserialization:
       fail-on-unknown-properties: false
-  data:
-    mongodb:
-      uri: ${MONGO_URI:mongodb+srv://${MONGO_USER:user}:${MONGO_PASS:pass}@core.migjs4v.mongodb.net/?retryWrites=true&w=majority}
-      database: ${MONGO_DATABASE:core}
-      authentication-database: ${MONGO_AUTH_DATABASE:admin}
+  # data:
+  #   mongodb:
+  #     uri: ${MONGO_URI:mongodb+srv://${MONGO_USER:user}:${MONGO_PASS:pass}@core.migjs4v.mongodb.net/?retryWrites=true&w=majority}
+  #     database: ${MONGO_DATABASE:core}
+  #     authentication-database: ${MONGO_AUTH_DATABASE:admin}
 
 logging:
   level:
